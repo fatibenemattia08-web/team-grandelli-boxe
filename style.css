@@ -180,6 +180,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   z-index: 100;
   background: rgba(11,11,13,.86);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(245,243,238,.08);
 }
 .header-inner {
@@ -246,12 +247,16 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .nav-toggle { display: flex; }
   .primary-nav {
     position: fixed;
-    inset: 66px 0 0 0;
+    top: 66px;
+    left: 0;
+    right: 0;
+    height: calc(100vh - 66px);
+    height: calc(100dvh - 66px);
     background: var(--ink);
     flex-direction: column;
     align-items: stretch;
     padding: var(--space-3);
-    gap: var(--space_1, 4px);
+    gap: var(--space-1, 8px);
     transform: translateX(100%);
     transition: transform .28s var(--ease);
     overflow-y: auto;
